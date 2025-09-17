@@ -1,0 +1,45 @@
+import java.util.*;
+
+class Student {
+    String name;
+    int score;
+
+    Student(String name, int score) {
+        this.name = name;
+        this.score = score;
+    }
+
+    String getGrade() {
+        return score >= 90 ? "A" :
+               score >= 80 ? "B" :
+               score >= 70 ? "C" :
+               score >= 60 ? "D" : "F";
+    }
+
+    public String toString() {
+        return name + " - Score: " + score + ", Grade: " + getGrade();
+    }
+}
+
+public class GradeSystem {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        List<Student> students = new ArrayList<>();
+
+        System.out.print("Enter number of students: ");
+        int n = sc.nextInt(); sc.nextLine();
+
+        for (int i = 0; i < n; i++) {
+            System.out.print("Name: ");
+            String name = sc.nextLine();
+            System.out.print("Score: ");
+            int score = sc.nextInt(); sc.nextLine();
+            students.add(new Student(name, score));
+        }
+
+        System.out.println("\n--- Student Grades ---");
+        for (Student s : students) {
+            System.out.println(s);
+        }
+    }
+}
