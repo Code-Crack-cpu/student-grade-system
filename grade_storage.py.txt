@@ -1,0 +1,27 @@
+import sqlite3
+
+conn = sqlite3.connect('grades.db')
+cur = conn.cursor()
+
+cur.execute('''CREATE TABLE IF NOT EXISTS students (
+    id INTEGER PRIMARY KEY,
+    name TEXT,
+    score INTEGER,
+    grade TEXT)''')
+
+def add_student(name, score):
+    grade = 'A' if score >= 90 else 'B' if score >= 80 else \
+            'C' if score >= 70 else 'D' if score >= 60 else 'F'
+    cur.execute("INSERT INTO students (name, score, grade) VALUES (?, ?, ?)",
+                (name, score, grade))
+    conn.commit()
+
+def show_students():
+    for row in cur.execute("SELECT * FROM students"):
+        print(row)
+
+# Example usage
+add_student("Alice", 85)
+add_student("Bob", 72)
+show_students()
+conn.close()
