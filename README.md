@@ -1,4 +1,4 @@
-
+8
 # 🎓 Student Grade System
 
 A mini-project built using **Java**, **Python**, and **SQLite** to demonstrate core concepts of Object-Oriented Programming and Database Integration.
