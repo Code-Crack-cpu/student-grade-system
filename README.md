@@ -1,4 +1,3 @@
-8
 # 🎓 Student Grade System
 
 A mini-project built using **Java**, **Python**, and **SQLite** to demonstrate core concepts of Object-Oriented Programming and Database Integration.
@@ -11,10 +10,15 @@ A mini-project built using **Java**, **Python**, and **SQLite** to demonstrate c
 
 ## 📂 Structure
 StudentGradeSystem/
+
 ├── Java/
 │   └── GradeSystem.java
+
+
 ├── Python/
 │   └── grade_storage.py
+
+
 └── README.md
 
  How to Run
